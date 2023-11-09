@@ -77,7 +77,6 @@ const checkOldProductionEnvironmentVariables = require('./checkOldProductionEnvi
       console.log(chalk.bold.red("'--environment=qe' is currently redirecting to '--environment=stage' on your behalf, and will be removed in the future."))
       console.log(chalk.bold.red("Prefer usage of '--environment=stage'."))
     }
-console.log("Token:" + argv.accessToken)
     const integrationAccessToken = argv.accessToken || await getIntegrationAccessToken(envSpecificConfig, argv);
     const zipPath = await getZipPath(argv);
     const extensionPackageManifest = await getExtensionPackageManifest(zipPath);
